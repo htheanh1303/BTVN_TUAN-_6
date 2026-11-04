@@ -1,0 +1,29 @@
+n = int(input("Nhap so sinh vien: "))
+while n < 1 or n > 60:
+    n = int(input("Nhap lai n (1-60): "))
+co_mat = 0
+vang_mat = 0
+co_phep = 0
+for i in range(1, n + 1):
+    print("Sinh vien thu", i)
+    trang_thai = int(input("Nhap trang thai (0, 1, 2): "))
+    while trang_thai != 0 and trang_thai != 1 and trang_thai != 2:
+        trang_thai = int(input("Nhap lai trang thai (0, 1, 2): "))
+    if trang_thai == 1:
+        co_mat += 1
+    elif trang_thai == 0:
+        vang_mat += 1
+    else:
+        co_phep += 1
+ti_le_co_mat = co_mat / n * 100
+ti_le_khong_co_mat = (vang_mat + co_phep) / n * 100
+print("So sinh vien co mat:", co_mat)
+print("So sinh vien vang mat:", vang_mat)
+print("So sinh vien co phep:", co_phep)
+
+print("Ti le sinh vien co mat:", ti_le_co_mat, "%")
+print("Ti le sinh vien khong co mat:", ti_le_khong_co_mat, "%")
+if co_mat + vang_mat + co_phep == n:
+    print("Tong so sinh vien hop le!")
+else:
+    print("Tong so sinh vien khong hop le!")

@@ -1,0 +1,11 @@
+n = int(input("Nhap n: "))
+while n < 1 or n > 30:
+    n = int(input("Nhap lai n (1-30): "))
+tong = 0
+for i in range(1, n + 1):
+    a = int(input("Nhap so nguyen: "))
+    tong = tong + a
+trung_binh = tong / n
+print("So luong so da nhap la:", n)
+print("Tong cac so da nhap la:", tong)
+print("Trung binh cong la:", trung_binh)
